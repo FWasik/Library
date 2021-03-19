@@ -1,0 +1,41 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block extra-styles %}
+    <link rel="stylesheet" href="{% static 'library/styleOrder_detail.css' %}" type="text/css">
+{% endblock extra-styles %}
+
+{% block content %}
+    <main>
+        <div class= "class-section">
+
+            <h2> Szczegóły zamówienia </h2>
+            <div class="border border-left-0 border-right-0 pt-3">
+
+                <div class='container-fluid' id='details'>
+                    <p> Osoba zamawiająca: {{ object.user.first_name}} {{object.user.last_name}} </p>
+                    <p> Tytuł: {{ object }} </p>
+                    <p> Autor: {{ object.book.author }} </p>
+                    <p> Data rozpoczęcia wypożyczenia: {{ object.date_start|date:"j E Y, l" }} </p>
+                    <p> Data końca wypożyczenia: {{ object.date_end|date:"j E Y, l" }} </p>
+                    <p> Adres: {{ object.street_name }} {{ object.num_building }}  
+
+                        {% if object.num_door %}
+                            /{{ object.num_door }}
+                        {% endif %}
+                    </p>
+                    <p> Kod pocztowy: {{  object.post_code }} </p>
+                    <p> Miejscowość: {{ object.city }} </p>
+                    <p> Kraj: {{ object.country }}</p>
+                </div>
+                
+            </div>
+
+            <div class="container">
+                <a class="btn btn-secondary mt-3" href="{% url 'order-update' object.id %}"> Aktualizuj zamówienie </a>
+                <a class="btn btn-danger mt-3" href="{% url 'order-delete' object.id %}"> Usuń zamówienie </a>            
+            </div>
+            
+        </div>
+   </main>
+{% endblock content %}

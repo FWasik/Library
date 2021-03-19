@@ -1,0 +1,29 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block extra-styles %}
+    <link rel="stylesheet" href="{% static 'library/styleOrder_detail.css' %}" type="text/css">
+{% endblock extra-styles %}
+
+{% block content %}
+    <main>
+       <form method="POST">
+             <div class= "class-section">
+                {% csrf_token %}
+                <h2> Usunięcie zamówienia </h2>
+                <div class="border border-left-0 border-right-0 pt-3">
+
+                    <div class='container-fluid'>
+                        <h4> Chcesz usunąć konto? </h4>
+
+                        <div class="form-group">
+                            <button class="btn btn-danger" type="submit"> Tak, usuń </button>
+                            <a class="btn btn-secondary" href="{% url 'profile-orders-list' %}"> Anuluj </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+       </form>
+   </main>
+{% endblock content %}

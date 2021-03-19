@@ -1,0 +1,119 @@
+html, body {
+  height: 80vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  background-position: center;
+  padding: 150px 0 150px 0;
+  font-family: 'Abril Fatface', cursive;
+}
+
+
+
+.class-section {
+  width: 50%;
+  background-color: rgba(159, 159, 159, 0.95);
+  padding: 40px;
+  border-radius: 30px;
+  margin: auto;
+  border-color: black;
+    border-style: solid;
+    border-width: 6px;
+  font-size: 120%;
+}
+
+fieldset .form-group {
+  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+main a {
+  margin-left: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+main a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+
+
+footer {
+    background-color: #3f3f3f;
+    color: #d5d6d6;
+    padding-top: 2rem;
+    flex-shrink: 0;
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:  #3f3f3f;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 4px;
+  z-index: 1;
+  text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+hr.light {
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 75px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }

@@ -1,0 +1,83 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block extra-styles %}
+    <link rel="stylesheet" href="{% static 'library/styleProfile_Orders_list.css' %}" type="text/css">
+{% endblock extra-styles %}
+
+{% block content %}
+    <main>
+        <div class="containter">
+
+            <div class="row justify-content-around">
+                <div class="col-xl-6 col-10">
+                    <div class="class-section">
+
+                        {% if messages %}
+                            {% for message in messages %}
+                                    {% if 'profile_update' in message.tags %}
+                                        <div class = 'alert alert-success'>
+                                            {{ message }}
+                                        </div>
+                                    {% endif %}
+                            {% endfor %}
+                        {% endif %}
+
+                        <h2> Dane użytkownika </h2>
+                        <div class="border border-left-0 border-right-0 pt-3 pb-3">
+                            <div class="media">
+                                <img class='rounded-circle account-img' src="{{ user.profile.image.url }}">
+
+                                <div class="media-body">
+                                    <h2 class="account-heading pb-3"> {{ user.username }} </h2>
+                                    Email: 
+                                    <p class='lead'> {{ user.email }} </p>
+                                    Imie: 
+                                    <p class='lead'> {{ user.first_name }} </p>
+                                    Nazwisko: 
+                                    <p class='lead'> {{ user.last_name }} </p>    
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <a class="btn btn-dark" href="{% url 'profile-update' %}"> Zaktualizuj profil </a>
+                                <a class="btn btn-dark ml-2" href="{% url 'users-password-reset' %}"> Resetuj hasło </a>
+                                <a class="btn btn-danger ml-2" href="{% url 'profile-delete' user.id %}">Usuń konto</a>        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-5 col-10">
+                    <div class= "class-section">
+                        {% if messages %}
+                            {% for message in messages %}
+                                {% if 'order' in message.tags %}
+                                    <div class = 'alert alert-success'>
+                                        {{ message }}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        
+                        <h2> Twoje zamówienia </h2>
+                        <div class="border border-left-0 border-right-0 pt-3">
+
+                            {% if user.orders.all %}
+                                {% for obj in user.orders.all %}
+                                    <h4> <a href="{% url 'order-detail' obj.id %}"> Zamówienie nr. {{forloop.counter}} </a> </h4> 
+                                {% endfor %}
+
+                            {% else %}
+                                <h3> Brak zamówień </h3>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+        
+        </div>
+   </main>
+{% endblock content %}

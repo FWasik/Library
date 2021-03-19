@@ -1,0 +1,55 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block extra-styles %}
+    <link rel="stylesheet" href="{% static 'library/styleGallery.css' %}" type="text/css"> 
+{% endblock extra-styles %}
+
+{% block content %}
+    <main>
+        <div class="class-section">
+            <h1>Galeria</h1>
+
+            <div class="border border-left-0 border-right-0 border-bottom-0"> 
+                {% for book in books %}
+                    <div class="mySlides">
+                        <div class="text"> {{forloop.counter}} / {{books|length}}</div>
+                        <img src="{{ book.image.url }}">
+
+                        <div class="border border-left-0 border-right-0 mt-5 mb-3">    
+                            <h2 class="media-heading">Opis</h2>
+                            
+                            <div class="text-left">
+                                {{ book.summary }}
+                            </div>    
+                        </div>
+                    </div>    
+                {% endfor %}                        
+            </div>
+            
+            <button onclick="plusDivs(-1)">&#10094;</button>
+            <button onclick="plusDivs(+1)">&#10095;</button>       
+        </div>
+    </main>
+
+    <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+            showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length} ;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+            }
+    </script>
+    
+{% endblock content %}

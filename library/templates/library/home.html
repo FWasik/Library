@@ -1,0 +1,27 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block extra-styles %}
+    <link rel="stylesheet" href="{% static 'library/styleHome.css' %}" type="text/css">  
+{% endblock extra-styles %}
+
+{% block content %}
+
+    <main>
+        <div class="container-fluid">
+        {% if messages %}
+            {% for message in messages %}
+                <div class = "alert alert-success">
+                    {{ message }}
+                </div>      
+            {% endfor %}
+        {% endif %}
+        </div>
+
+        <div class="container" id="banner">
+            <h1>Witaj w Wirutalnej bibliotece</h1>
+            <a href="{% url 'lib-about' %}"  role="button">Zaczynajmy!</a>
+        </div>
+    </main>
+    
+{% endblock content %}

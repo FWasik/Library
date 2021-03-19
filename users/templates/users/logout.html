@@ -1,0 +1,23 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block extra-styles %}
+    <link rel="stylesheet" href="{% static 'users/styleLogout.css' %}" type="text/css">
+{% endblock extra-styles %}
+
+{% block content %}
+    <main>
+        <div class="class-section">
+            <h1> Zostałeś wylogowany </h1>
+
+            <div class="border-top pt-3">
+                    
+                    <a class="ml-2" href="{% url 'users-login' %}">
+                        Zaloguj się ponownie
+                    </a>
+            
+                </div>
+            </div>
+        </div>
+   </main>
+{% endblock content %}

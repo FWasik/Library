@@ -1,0 +1,46 @@
+
+main {
+    background-image: url(../assets/library3.jpg);
+    text-align: center;
+}
+
+.class-section {
+    width: 60%;
+}
+
+.class-section h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 300%;
+}
+
+.text {
+    margin-top: 20px;
+}
+
+.media-heading {
+    margin: 25px 0 25px 0;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.text-left {
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 82%;
+}
+
+img {
+    width: 180px;
+    height: 250px;
+}
+
+button {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

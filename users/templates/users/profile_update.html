@@ -1,0 +1,33 @@
+{% extends 'library/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra-styles %}
+    <link rel="stylesheet" href="{% static 'library/styleForms.css' %}" type="text/css"> 
+{% endblock extra-styles %}
+
+{% block content %}
+    <main>
+        <div class="class-section">
+            <form method="POST">
+                {% csrf_token %}
+
+                <fieldset class="form-group">
+                    <h1> Formularz aktualizacji profilu </h1>
+
+                    <div class="border border-left-0 border-right-0"> 
+                        
+                        {{ u_form|crispy }}
+                        {{ p_form|crispy }}
+
+                        <div class="form-group">
+                            <button class="btn btn-dark" type="submit"> Zmień profil </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+
+   </main>
+{% endblock content %}

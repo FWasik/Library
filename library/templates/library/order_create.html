@@ -1,0 +1,41 @@
+{% extends 'library/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra-styles %}
+    <link rel="stylesheet" href="{% static 'library/styleForms.css' %}" type="text/css"> 
+{% endblock extra-styles %}
+
+{% block content %}
+    <main>
+        <div class="class-section">
+            <form method="POST">
+                {% csrf_token %}
+
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4"> 
+                        <h1> Formularz zamówienia </h2>
+                    </legend>
+                    
+                    {{ form|crispy }}
+
+                     <div class="form-group">
+                        <button class="btn btn-dark" type="submit"> Złóż zamówienie </button>
+                    </div>
+                </fieldset>
+
+                <div class="border border-right-0 border-left-0 pt-3">    
+                    <small>
+                        <ul>
+                            <li> Pola oznaczone * są obowiązkowe     </li>
+                            <li> Data rozpoczęcia: Data dzisiejsza   </li>
+                            <li> Data zakończenie: 30 dni od dzisiaj </li>
+                        </ul>
+                    </small>
+                </div>
+            </form>
+
+        </div>
+
+   </main>
+{% endblock content %}
