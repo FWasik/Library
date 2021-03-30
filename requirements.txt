@@ -5,7 +5,7 @@ django-countries==7.0
 django-crispy-forms==1.10.0
 mysql-connector-python==8.0.22
 mysqlclient @ file:///C:/Programowanie/Python/Kursik/Django/Library/django_library_project/mysqlclient-1.4.6-cp38-cp38-win32.whl
-Pillow==8.0.1
+Pillow==8.1.2
 protobuf==3.14.0
 pytz==2020.4
 six==1.15.0
