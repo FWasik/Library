@@ -14,6 +14,8 @@ Second condition is enviromental variables. There must be two enviromental varia
 in get() method). 
 
 To sum up, Library Project is my first project with Django and MySQL. It is full responsive web site (Bootstrap 4) with functionalities like registration, logging, CRUD and
-password reset. This project is not finished yet. Version 2 coming soon.
+password reset. 
+
+Version 2 coming soon.
 
 Cheers!
